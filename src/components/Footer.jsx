@@ -13,7 +13,8 @@ const Footer = () => (
       animation: "footer-slide-up 1s cubic-bezier(.73,.17,.24,1.14) 0s both"
     }}
   >
-    <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 px-4">
+    <div className="max-w-5xl mx-auto px-4">
+      <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 pb-6 border-b border-[#ffd16666]">
       {/* Iconos sociales */}
       <div className="flex items-center space-x-4 animate-footer-flash" style={{ animation: "footer-flash 0.65s 0.65s both" }}>
         <a
@@ -87,14 +88,17 @@ const Footer = () => (
           ¡Pide tu Delivery!
         </a>
       </div>
-    </div>
-    {/* Separador animado */}
-    <div className="w-full mt-6 flex justify-center">
-      <span className="block w-32 h-1 rounded-full bg-[#FFD166] animate-pulse" />
-    </div>
-    {/* Copyright */}
-    <div className="w-full text-center mt-4 text-xs text-[#FFD166] animate-footer-flash" style={{ animation: "footer-flash 0.65s 1.2s both" }}>
-      © {new Date().getFullYear()} <span className="font-semibold">Pollos Pampeño</span>. Todos los derechos reservados.
+      </div>
+
+      <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="w-full md:w-auto text-center md:text-left text-xs text-[#FFD166] animate-footer-flash" style={{ animation: "footer-flash 0.65s 1.2s both" }}>
+          © {new Date().getFullYear()} <span className="font-semibold">Pollos Pampeño</span>. Todos los derechos reservados.
+        </div>
+
+        <div className="w-full md:w-auto flex justify-center md:justify-end">
+          <span className="block w-32 h-1 rounded-full bg-[#FFD166] animate-pulse" />
+        </div>
+      </div>
     </div>
     <style>{`
       @keyframes footer-slide-up {
