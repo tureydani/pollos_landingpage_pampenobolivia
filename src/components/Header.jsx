@@ -3,6 +3,12 @@ import logo from "../assets/logo.png";
 import { SECTION_IDS } from "../config/constants";
 
 const slogan = "Rico hasta el coto!..";
+const navItems = [
+  { id: SECTION_IDS.individual, label: "Individual" },
+  { id: SECTION_IDS.porcion, label: "Porcion" },
+  { id: SECTION_IDS.combos, label: "Combos" },
+  { id: SECTION_IDS.pedidos, label: "Pedidos" },
+];
 
 const SloganFlash = () => (
   <div className="w-full flex items-center justify-center md:justify-start md:pl-1 pb-2 md:pb-0 select-none">
