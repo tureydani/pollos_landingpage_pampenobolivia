@@ -1,9 +1,6 @@
 import React from "react";
 
-// Cambia este número por tu WhatsApp real:
-const WHATSAPP_NUMBER = "59169536433"; // <--- AQUÍ PONES TU NÚMERO
-
-// Footer animado y colorido, con efectos acordes al header
+const WHATSAPP_NUMBER = "59169536433";
 const Footer = () => (
   <footer
     className="relative overflow-hidden bg-[#E63946] border-t-2 border-[#FFD166] text-white py-8 mt-6
@@ -40,7 +37,7 @@ const Footer = () => (
                 key={idx}
                 style={{
                   display: "inline-block",
-                  animation: `footer-flash-letter 0.35s ${0.8 + idx * 0.045}s both`
+                  animation: `footer-flash-letter 0.35s ${0.35 + idx * 0.038}s both`
                 }}
               >
                 {char}
@@ -94,31 +91,47 @@ const Footer = () => (
       }
       @keyframes footer-flash {
         0% {
-          opacity: 0.0; filter: brightness(1.1) blur(2px);
+          opacity: 0;
+          filter: brightness(1.04) blur(1.2px);
+          transform: translateY(8px);
         }
         45% {
-          opacity: 1; filter: brightness(2.2) blur(.2px);
+          opacity: 1;
+          filter: brightness(1.2) blur(.2px);
         }
         100% {
-          opacity: 1; filter: brightness(1) blur(0);
+          opacity: 1;
+          filter: brightness(1) blur(0);
+          transform: translateY(0);
         }
       }
       @keyframes footer-flash-letter {
         0% {
-          opacity: 0.35; filter: brightness(1.2) blur(2px);
-          transform: scale(0.85) rotate(-2deg);
+          opacity: 0.45;
+          filter: brightness(1.08) blur(1.2px);
+          transform: scale(0.96) translateY(3px);
         }
         45% {
-          opacity: 1; filter: brightness(2.5) blur(.2px);
-          transform: scale(1.12) rotate(3deg);
+          opacity: 1;
+          filter: brightness(1.25) blur(.15px);
+          transform: scale(1.03) translateY(0);
         }
         100% {
-          opacity: 1; filter: brightness(1) blur(0);
-          transform: scale(1) rotate(0deg);
+          opacity: 1;
+          filter: brightness(1) blur(0);
+          transform: scale(1) translateY(0);
         }
       }
       .animate-footer-slide-up { animation: footer-slide-up 1s cubic-bezier(.73,.17,.24,1.14) 0s both; }
       .animate-footer-flash { animation: footer-flash 0.65s both; }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     `}</style>
   </footer>
 );
