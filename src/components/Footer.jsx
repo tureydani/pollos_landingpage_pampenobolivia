@@ -6,14 +6,19 @@ const WHATSAPP_NUMBER = "59169536433"; // <--- AQUÍ PONES TU NÚMERO
 // Footer animado y colorido, con efectos acordes al header
 const Footer = () => (
   <footer
-    className="bg-[#E63946] border-t-2 border-[#FFD166] text-white py-8 mt-6
+    className="relative overflow-hidden bg-[#E63946] border-t-2 border-[#FFD166] text-white py-8 mt-6
       shadow-inner transition-shadow duration-500 hover:shadow-lg
       animate-footer-slide-up"
     style={{
       animation: "footer-slide-up 1s cubic-bezier(.73,.17,.24,1.14) 0s both"
     }}
   >
-    <div className="max-w-5xl mx-auto px-4">
+    <div className="pointer-events-none absolute inset-0 opacity-35" aria-hidden="true">
+      <div className="absolute -top-20 -left-8 h-52 w-52 rounded-full bg-[#FFD166] blur-3xl" />
+      <div className="absolute -bottom-28 right-2 h-64 w-64 rounded-full bg-[#f77f00] blur-3xl" />
+    </div>
+
+    <div className="relative max-w-6xl mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 pb-6 border-b border-[#ffd16666]">
       {/* Iconos sociales */}
       <div className="flex items-center space-x-4 animate-footer-flash" style={{ animation: "footer-flash 0.65s 0.65s both" }}>
