@@ -37,16 +37,12 @@ const Header = () => {
 
   return (
     <header
-      className="
-        bg-gradient-to-r from-[#E63946] via-[#FFB347] to-[#FFD166]
-        shadow-lg transition-shadow duration-500 hover:shadow-2xl
-        animate-slide-down
-        z-30
-        mb-3
-      "
-      style={{
-        animation: "slide-down 0.85s cubic-bezier(.73,.17,.24,1.14) 0s both"
-      }}
+      className="signature-font text-xl md:text-2xl lg:text-3xl slogan-letter"
+style={{
+  animationDelay: `${0.45 + 0.045 * idx}s`,
+  display: "inline-block",
+  minWidth: char === " " ? "0.6em" : undefined,
+}}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
         
@@ -102,12 +98,13 @@ const Header = () => {
 
       </div>
       {isMobileMenuOpen && (
-  <nav className="md:hidden flex flex-col p-4 bg-red-500">
-    <a href="#individual">Individual</a>
-    <a href="#porcion">Porción</a>
-    <a href="#combos">Combos</a>
-    <a href="#pedidos">Pedidos</a>
-  </nav>
+  <nav className="hidden md:flex gap-6">
+  {navItems.map((item) => (
+    <a key={item.id} href={`#${item.id}`} className="text-white">
+      {item.label}
+    </a>
+  ))}
+</nav>
 )}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
