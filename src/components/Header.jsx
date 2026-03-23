@@ -52,11 +52,7 @@ const Header = () => {
           <img
             src={logo}
             alt="Pollos Pampeño Logo"
-            className="
-              w-20 h-20 rounded-full border-4 border-white shadow-md
-              hover:scale-105 transform transition-transform duration-300 bg-white object-cover
-              animate-flash-once
-            "
+
             style={{
               animation: "flash-once 0.68s 0.45s both"
             }}
