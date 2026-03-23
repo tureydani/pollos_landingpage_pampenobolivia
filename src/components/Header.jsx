@@ -94,7 +94,6 @@ const Header = () => {
           <a href="#pedidos" className="text-white">Pedidos</a>
         </nav>
 
-
       </div>
       {isMobileMenuOpen && (
   <nav className="md:hidden flex flex-col p-4 bg-red-500">
@@ -104,7 +103,6 @@ const Header = () => {
     <a href="#pedidos">Pedidos</a>
   </nav>
 )}
-
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         .signature-font {
